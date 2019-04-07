@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Tracker</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,400" rel="stylesheet">
+    <link href="my-style.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body>
+    <header>
+      <h1>
+        Exercise Tracker
+      </h1>
+      <div class="stripe">
+        freeCodeCamp APIs and Microservices Projects
+      </div>
+    </header>
+    
+    <main>
+      <div class="form-container">      
+        <form action="/api/exercise/new-user" method="post">
+          <fieldset>
+            <legend>
+              Create a new user
+            </legend>
+            <div class="input-container">
+              <div class="input-group">
+                <input id="username" type="text" name="username" placeholder="Enter a username" required autofocus>
+                <label for="username">Username</label>
+              </div>
+              <input type="submit" value="Submit">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="form-container"> 
+        <form action="/api/exercise/add" method="post">
+          <fieldset>
+            <legend>
+              Add an exercise
+            </legend>
+            <div class="input-container">
+              <div class="input-group">
+                <input id="userid" type="text" name="userId" placeholder="User id" required>
+                <label for="userid">User id</label>
+              </div>
+              <div class="input-group">
+                <input type="text" name="description" placeholder="Description" required>
+                <label for="description">Exercise description</label>
+              </div>
+              <div class="input-group">
+                <input type="number" name="duration" min="1" max="600" value="15" required>
+                <label for="duration">Duration (in minutes)</label>
+              </div>
+              <div class="input-group">
+                <input type="date" name="date" placeholder="Date (YYYY-MM-DD)">
+                <label for="date">Date of exercise (YYYY-MM-DD)</label>
+              </div>
+              <input type="submit" value="Submit">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="form-container"> 
+        <form action="/api/exercise/users" method="get">
+          <fieldset>
+            <legend>
+              Get all users
+            </legend>
+            <input type="submit" value="Get all users">
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    
+    <footer>
+      <h3>
+        GET user's exercise log
+      </h3>
+      <code>GET /api/exercise/log?userId={userId}[&from=YYYY-MM-DD][&to=YYYY-MM-DD][&limit=number]</code>
+      <p>
+        {} = required, [] = optional
+      </p>
+    </footer>
+    
+  </body>
+  
+</html>
